@@ -74,3 +74,8 @@
 .darkest {
     background: rgba(255, 255, 255, 0.12);
 }
+
+textarea {
+    width : 50%;
+    height: 50vh;
+}
