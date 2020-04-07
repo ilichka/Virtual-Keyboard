@@ -1,5 +1,5 @@
 const Keyboard = {
-    pizdec: '',
+    claw: '',
 
     elements: {
         main: null,
@@ -86,7 +86,7 @@ const Keyboard = {
             "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
             "ctrl", "win", "Alt", "space", "Alt", "ctrl"
         ];
-        const jopa = [
+        const smth = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "Backspace",
             "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ",
             "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "enter",
@@ -124,7 +124,7 @@ const Keyboard = {
                      break;
                  }
              }*/
-            keyElement.classList.add("keyboard__key", `${key}`, `${key.toUpperCase()}`, `${jopa[i]}`, `${jopa[i].toUpperCase()}`, `${true_exeptions[i]}`);
+            keyElement.classList.add("keyboard__key", `${key}`, `${key.toUpperCase()}`, `${smth[i]}`, `${smth[i].toUpperCase()}`, `${true_exeptions[i]}`);
 
 
             switch (key) {
@@ -218,27 +218,27 @@ const Keyboard = {
                             this.properties.value = document.querySelector('.use-keyboard-input').value;
                         } else {
                             if (key === '[') {
-                                document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? jopa[21].toUpperCase() : jopa[21].toLowerCase();
+                                document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? smth[21].toUpperCase() : smth[21].toLowerCase();
                                 this.properties.value = document.querySelector('.use-keyboard-input').value;
                             } else {
                                 if (key === ']') {
-                                    document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? jopa[22].toUpperCase() : jopa[22].toLowerCase();
+                                    document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? smth[22].toUpperCase() : smth[22].toLowerCase();
                                     this.properties.value = document.querySelector('.use-keyboard-input').value;
                                 } else {
                                     if (key === ';') {
-                                        document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? jopa[33].toUpperCase() : jopa[33].toLowerCase();
+                                        document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? smth[33].toUpperCase() : smth[33].toLowerCase();
                                         this.properties.value = document.querySelector('.use-keyboard-input').value;
                                     } else {
                                         if (key === '\'') {
-                                            document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? jopa[34].toUpperCase() : jopa[34].toLowerCase();
+                                            document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? smth[34].toUpperCase() : smth[34].toLowerCase();
                                             this.properties.value = document.querySelector('.use-keyboard-input').value;
                                         } else {
                                             if (key === ',') {
-                                                document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? jopa[44].toUpperCase() : jopa[44].toLowerCase();
+                                                document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? smth[44].toUpperCase() : smth[44].toLowerCase();
                                                 this.properties.value = document.querySelector('.use-keyboard-input').value;
                                             } else {
                                                 if (key === '.') {
-                                                    document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? jopa[45].toUpperCase() : jopa[45].toLowerCase();
+                                                    document.querySelector('.use-keyboard-input').value += this.kod.eng ? key : this.properties.capsLock ? smth[45].toUpperCase() : smth[45].toLowerCase();
                                                     this.properties.value = document.querySelector('.use-keyboard-input').value;
                                                 } else {
                                                     if (key === 'ctrl' || key === 'win' || key === 'Alt') {
@@ -309,7 +309,7 @@ const Keyboard = {
 document.addEventListener('keydown', (e) => {
     console.log(e.code);
     if (e.keyCode === 17) {
-        Keyboard.pizdec = 'ctrl';
+        Keyboard.claw = 'ctrl';
         let j = 0;
         if (Keyboard.kod.eng) {
             document.querySelectorAll('.keyboard__key').forEach(key => {
@@ -345,22 +345,22 @@ document.addEventListener('keydown', (e) => {
             }
         } else {
             if (e.key >= 0 && e.key <= 9 || e.key === '[' || e.key === ']' || e.key === ';' || e.key === '\'' || e.key === ',' || e.key === '.' || e.key === '/' || e.key === 'Control' || e.key === 'Meta' || e.key === 'Alt' || e.key === 'Alt' || e.key === 'Control') {
-                Keyboard.pizdec = e.code;
+                Keyboard.claw = e.code;
             } else {
-                Keyboard.pizdec = e.key;
+                Keyboard.claw = e.key;
             }
         }
 
         /* for (let i = 0; i < Keyboard.kod.exeptions_1.length; i++) {
              if (Keyboard.kod.exeptions_1[i] === e.key) {
-                 Keyboard.pizdec = Keyboard.kod.instead_1[i];
+                 Keyboard.claw = Keyboard.kod.instead_1[i];
                  break;
              }
          }
      }*/
     }
-    document.querySelector(`.${Keyboard.pizdec}`).classList.add('darkest');
-    console.log(Keyboard.pizdec);
+    document.querySelector(`.${Keyboard.claw}`).classList.add('darkest');
+    console.log(Keyboard.claw);
 });
 
 /*document.querySelector('.ControlLeft').addEventListener('click', () => {
@@ -385,7 +385,7 @@ document.addEventListener('keyup', (e) => {
     document.querySelectorAll('.keyboard__key').forEach(key => {
         key.classList.remove('darkest')
     });
-    console.log(Keyboard.pizdec);
+    console.log(Keyboard.claw);
 });
 
 
